@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/l2on_grabber.iml" filepath="$PROJECT_DIR$/l2on_grabber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/l2on_grabber/l2on_grabber-l2on_grabber.iml" filepath="$PROJECT_DIR$/.idea/modules/l2on_grabber/l2on_grabber-l2on_grabber.iml" group="l2on_grabber" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/l2on_grabber_main.iml" filepath="$PROJECT_DIR$/.idea/modules/l2on_grabber_main.iml" group="l2on_grabber" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/l2on_grabber_test.iml" filepath="$PROJECT_DIR$/.idea/modules/l2on_grabber_test.iml" group="l2on_grabber" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/models/models.iml" filepath="$PROJECT_DIR$/.idea/modules/models/models.iml" group="models" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/models/models_main.iml" filepath="$PROJECT_DIR$/.idea/modules/models/models_main.iml" group="models" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/models/models_test.iml" filepath="$PROJECT_DIR$/.idea/modules/models/models_test.iml" group="models" />
+    </modules>
+  </component>
+</project>

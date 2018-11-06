@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="homecontroll-server_main" target="1.8" />
+      <module name="homecontroll-server_test" target="1.8" />
+      <module name="l2on_grabber_main" target="1.8" />
+      <module name="l2on_grabber_test" target="1.8" />
+      <module name="models_main" target="1.8" />
+      <module name="models_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

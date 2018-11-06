@@ -1,0 +1,2 @@
+rootProject.name = 'l2on_grabber'
+include ':l2on_grabber', ':models'
