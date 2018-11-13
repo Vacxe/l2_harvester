@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="homecontroll-server_main" target="1.8" />
       <module name="homecontroll-server_test" target="1.8" />
+      <module name="l2_harvester_main" target="1.8" />
+      <module name="l2_harvester_test" target="1.8" />
       <module name="l2on_grabber_main" target="1.8" />
       <module name="l2on_grabber_test" target="1.8" />
       <module name="models_main" target="1.8" />

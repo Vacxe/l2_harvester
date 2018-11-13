@@ -8,7 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/l2on_grabber" />
+            <option value="$PROJECT_DIR$/l2_harvester" />
             <option value="$PROJECT_DIR$/models" />
           </set>
         </option>
