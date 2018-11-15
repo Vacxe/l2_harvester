@@ -10,26 +10,31 @@ import java.net.URL
 import java.util.*
 
 class Harvester {
+    private val REFRESH_TIME = 1000 * 60 * 5L
+
     fun launch() {
-        Timer().schedule(object :TimerTask(){
+        Timer().schedule(object : TimerTask() {
             override fun run() {
                 val fileName = "/res/ids.txt"
                 val file = File(fileName)
-                if(file.exists()) {
-                    val ids: List<String> = File(fileName).readLines()
-                    for (item in ids) {
-                        System.out.println("Updating item: $item")
-                        val response = sendRequest("http://aksenov.online:6661/?id=$item")
-                        val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
-                        Storage.updateItem(item, itemInfo)
-                        System.out.println("Item: $item was updated")
-                    }
-                }else{
+
+                val ids  = if (!file.exists()) {
                     System.out.println("file in ${file.absolutePath} not found")
+                    System.out.println("Test mode for id 1459")
+                    listOf("1459")
+                }else{
+                    File(fileName).readLines()
+                }
+
+                for (item in ids) {
+                    System.out.println("Updating item: $item")
+                    val response = sendRequest("http://localhost:6661/?id=$item")
+                    val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
+                    Storage.updateItem(item, itemInfo)
+                    System.out.println("Item: $item was updated")
                 }
             }
-        }, 0 , 1000*15)
-
+        }, 0, REFRESH_TIME)
     }
 
     @Synchronized
