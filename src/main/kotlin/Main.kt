@@ -1,6 +1,5 @@
 import config.serverConfig
 import grab.Harvester
-import model.Item
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson

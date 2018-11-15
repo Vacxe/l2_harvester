@@ -12,13 +12,13 @@ fun Routing.setMetrics() = route("") {
 
     get("metrics") {
         val builder = StringBuilder()
-        for ((type, value) in Storage.itemInfoStorage) {
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"min\",action=\"sale\"} ${value.sale.min}")
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"avg\",action=\"sale\"} ${value.sale.avg}")
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"max\",action=\"sale\"} ${value.sale.max}")
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"min\",action=\"buy\"} ${value.buy.min}")
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"avg\",action=\"buy\"} ${value.buy.avg}")
-            builder.appendln("$TABLE_NAME{item=\"${type.name}\",itemId=\"${type.id}\",type=\"max\",action=\"buy\"} ${value.buy.max}")
+        for ((id, value) in Storage.itemInfoStorage) {
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"min\",action=\"sale\"} ${value.sale.min}")
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"avg\",action=\"sale\"} ${value.sale.avg}")
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"max\",action=\"sale\"} ${value.sale.max}")
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"min\",action=\"buy\"} ${value.buy.min}")
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"avg\",action=\"buy\"} ${value.buy.avg}")
+            builder.appendln("$TABLE_NAME{item=\"${value.name}\",itemId=\"$id\",type=\"max\",action=\"buy\"} ${value.buy.max}")
 
         }
         call.respond(builder.toString())

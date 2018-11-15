@@ -9,11 +9,7 @@ import io.ktor.routing.route
 
 fun Routing.setRoutes() = route("") {
     get("/item/{id}") {
-        val id = call.parameters["id"]
-        val item = Storage.itemInfoStorage.keys.find { it.id == id }
-
-        item?.let {
-            call.respond(Storage.itemInfoStorage[it] ?: "Item not found")
-        }?: call.respond("Item not found")
+        val id = call.parameters["id"]?:""
+        call.respond(Storage.getInfo(id) ?: "Item not found")
     }
 }
