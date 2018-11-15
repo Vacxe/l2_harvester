@@ -13,8 +13,15 @@ import java.text.DateFormat
 
 
 fun main(args: Array<String>) {
-    startServer()
-    Harvester().launch()
+    Thread().run {
+        startServer()
+    }
+
+    Thread().run {
+        Harvester().launch()
+    }
+
+
 }
 
 private fun startServer() =
@@ -30,4 +37,4 @@ private fun startServer() =
                     setPrettyPrinting()
                 }
             }
-        }.start(true)
+        }.start()
