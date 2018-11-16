@@ -28,7 +28,7 @@ class Harvester {
 
                 for (item in ids) {
                     System.out.println("Updating item: $item")
-                    val response = sendRequest("http://localhost:6661/?id=$item")
+                    val response = sendRequest("http://scrapper:6661/?id=$item")
                     val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
                     Storage.updateItem(item, itemInfo)
                     System.out.println("Item: $item was updated")
