@@ -1,3 +1,3 @@
 package model
 
-data class ItemInfo(val sale: Price, val buy: Price, val name: String = "Unknown")
+data class ItemInfo(val sale: Price, val buy: Price, var name: String = "Unknown")

@@ -18,20 +18,31 @@ class Harvester {
                 val fileName = "/res/ids.txt"
                 val file = File(fileName)
 
-                val ids  = if (!file.exists()) {
+                val items  = if (!file.exists()) {
                     System.out.println("file in ${file.absolutePath} not found")
                     System.out.println("Test mode for id 1459")
-                    listOf("1459")
+                    listOf("1459 CrystalC")
                 }else{
                     File(fileName).readLines()
                 }
 
-                for (item in ids) {
+                for (item in items) {
+                    val params = item.split(" ")
+                    val id = params[0]
+                    val name = params[1]
+
                     System.out.println("Updating item: $item")
-                    val response = sendRequest("http://scrapper:6661/?id=$item")
-                    val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
-                    Storage.updateItem(item, itemInfo)
-                    System.out.println("Item: $item was updated")
+
+                    try {
+                        val response = sendRequest("http://scrapper:6661/?id=$id")
+                        val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
+                        itemInfo.name = name
+                        Storage.updateItem(item, itemInfo)
+                        System.out.println("Item: $item was updated")
+                    }catch (e: Exception){
+                        System.out.println("Filed update item: $item")
+                    }
+
                 }
             }
         }, 0, REFRESH_TIME)
