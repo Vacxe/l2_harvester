@@ -37,7 +37,7 @@ class Harvester {
                         val response = sendRequest("http://scrapper:6661/?id=$id")
                         val itemInfo = Gson().fromJson(response, ItemInfo::class.java)
                         itemInfo.name = name
-                        Storage.updateItem(item, itemInfo)
+                        Storage.updateItem(id, itemInfo)
                         System.out.println("Item: $item was updated")
                     }catch (e: Exception){
                         System.out.println("Filed update item: $item")
