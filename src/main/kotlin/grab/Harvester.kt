@@ -24,7 +24,7 @@ class Harvester {
                     listOf("1459 CrystalC")
                 }else{
                     File(fileName).readLines()
-                }
+                }.filter { !it.startsWith("#") && it.isNotEmpty() }
 
                 for (item in items) {
                     val params = item.split(" ")
